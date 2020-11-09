@@ -24,8 +24,10 @@ namespace HotDrinksMachine
             services.AddScoped<IHotDrinkFactory, HotDrinkFactory>();
 
             services.AddScoped<IHotDrink, Coffee>();
+            services.AddScoped<Coffee>();
             services.AddScoped<IHotDrink, Chocolate>();
-            services.AddScoped<IHotDrink, LemonTea>();
+            services.AddScoped<Chocolate>();
+            services.AddScoped<LemonTea>();
 
             services.AddControllersWithViews();
 

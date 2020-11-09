@@ -1,4 +1,5 @@
 ﻿using HotDrinksMachine.Types;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 
 namespace HotDrinksMachine.HotDrinks
@@ -17,12 +18,12 @@ namespace HotDrinksMachine.HotDrinks
             switch (hotDrink) 
             {
                 case HotDrinksEnum.Chocolate:
-                    return (IHotDrink)_serviceProvider.GetService(typeof(Chocolate));
+                    return (IHotDrink)_serviceProvider.GetService<Chocolate>();
                 case HotDrinksEnum.LemonTea:
-                    return (IHotDrink)_serviceProvider.GetService(typeof(LemonTea));
+                    return (IHotDrink)_serviceProvider.GetService<LemonTea>();
                 case HotDrinksEnum.Coffee:
                 default:
-                    return (IHotDrink)_serviceProvider.GetService(typeof(Coffee));
+                    return (IHotDrink)_serviceProvider.GetService<Coffee>();
             }
 
         }
